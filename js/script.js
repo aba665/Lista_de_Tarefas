@@ -37,7 +37,7 @@ function InserirDados(){
     txt.innerHTML = " "
     first.appendChild(txt)
     txt.innerHTML += `${to_do.value}`
-    txt.style.background = `white`
+    txt.style.background = `#6088c4fb`
     to_do.value= ""
     to_do.focus()
 }
@@ -46,8 +46,9 @@ function InserirDados2(){
     txt2.innerHTML = " "
     second.appendChild(txt2)
     txt2.innerHTML += `${to_doing.value}`
-    txt2.style.background = `white`
+    txt2.style.background = `#6088c4fb`
     to_doing.value= ""
+    txt2.style.textShadow = `2px 1px 2px black`
     to_doing.focus()
 }
 function InserirDados3(){
@@ -55,7 +56,7 @@ function InserirDados3(){
     txt3.innerHTML = " "
     third.appendChild(txt3)
     txt3.innerHTML += `${to_finished.value}`
-    txt3.style.background = `white`
+    txt3.style.background = `#6088c4fb`
     to_finished.value= ""
     to_finished.focus()
 
