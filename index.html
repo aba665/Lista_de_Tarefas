@@ -13,26 +13,26 @@
         <h1>Marcador de Tarefas</h1>
     </header>
     <div id="container">
-        <div class="encima" id="o">
+        <div class="encima" id="o"  onmouseover="MediumSmall()" onmouseenter="Diminuir()">
             <h2>Fazer</h2>
-            <input type="text" name="Fazer" id="fazer" onclick="Diminuir()">
-            <a href=""><img src="image/emblem.png" alt="inserir"></a>
+            <input type="text" name="Fazer" id="fazer">
+            <a href="#" onclick="InserirDados()"><img src="image/emblem.png" alt="inserir" ></a>
             <a href=""><img src="image/trash.png" alt="lixeira"></a>
-            <div class="quests"></div>
+            <div class="quests" id="first"></div>
         </div>
-        <div id="meio">
+        <div id="meio" onmouseenter="leave()" onmouseover="Aumentar()">
             <h2>Fazendo</h2>
             <input type="text" name="Fazendo" id="fazendo" onclick="Aumentar()">
-            <a href=""><img src="image/insert.png" alt="inserir"></a>
+            <a href="#"  onclick="InserirDados2()"><img src="image/insert.png" alt="inserir"></a>
             <a href=""><img src="image/empty.png" alt="lixeira"></a>
-            <div class="quests"></div>
+            <div class="quests" id="second"></div>
         </div>
-        <div class="encima" id="u">
+        <div class="encima" id="u" onmouseover="MediumSmall()" onmouseenter="Diminuir()">
             <h2>Feito</h2>
-            <input type="text" name="Feito" id="feito" onclick="Diminuir()">
-            <a href=""><img src="image/emblem.png" alt="inserir"></a>
+            <input type="text" name="Feito" id="feito" >
+            <a href="#"  onclick="InserirDados3()"><img src="image/emblem.png" alt="inserir"></a>
             <a src=""><img src="image/trash.png" alt="lixeira"></a>
-            <div class="quests"></div>
+            <div class="quests" id="third"></div>
         </div>
     </div>
     <footer>
