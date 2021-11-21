@@ -13,7 +13,9 @@ body{
     width: 100%;
     height: 650px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #6088c4fb;
+    background-image: url(/image/paico.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h1{
     padding: 5px;
@@ -43,24 +45,24 @@ p{
     height: 100%;
 }
 .encima{
-    color: #33495e;
-    background-color: rgb(236, 34, 34);
+    color: black;
+    background-color: #ffffffbb;
     text-align: center;
     width: 30%;
-    height: 40vw;
+    height: 35vw;
     border: 3px solid black;
     box-shadow: 3px 2px 4px #33495e;
-    transition: 1.2s ease-in;
+    transition: 0.8s ease-in;
 }
 #meio{
-    color: rgb(236, 34, 34);
+    color: white;
     text-align: center;
-    background-color: #33495e;
+    background-color: #33495ebb;
     width: 30%;
     height: 32vw;
     border: 3px solid black;
-    box-shadow: 2px 2px 4px rgb(236, 34, 34);
-    transition: 0.8s ease-in;
+    box-shadow: 2px 2px 4px black;
+    transition: 1.5s ease-in;
 }
 .quests{
     width: 90%;
@@ -86,5 +88,23 @@ img{
 }
 footer{
     text-align: center;
+    position: relative;
+    bottom: 10px;
    
+}
+#imginside{
+    display: flex;
+    float: right;
+    width: 20px;
+    cursor: pointer;
+}
+ul li{
+    width: 95%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin: 2px auto;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 2px;
+    list-style: none;
 }
