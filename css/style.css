@@ -13,7 +13,7 @@ body{
     width: 100%;
     height: 800px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: url(/image/paico.jpg);
+    background-image: url(../image/paico.jpg);
     background-repeat: no-repeat;
     background-repeat: repeat-y;
     background-size: cover;

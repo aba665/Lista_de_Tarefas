@@ -23,7 +23,7 @@ function InserirDados(){
     var txt = document.createElement("li")
     let imagem = document.createElement("img")
     imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "/image/delete.png")
+    imagem.setAttribute("src", "image/delete.png")
     first.appendChild(txt)
     txt.innerHTML += `${to_do.value}`
     arr.push(txt)
@@ -49,7 +49,7 @@ function InserirDados2(){
     var txt2 = document.createElement("li")
     let imagem = document.createElement("img")
     imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "/image/delete.png")
+    imagem.setAttribute("src", "image/delete.png")
     txt2.innerHTML = " "
     second.appendChild(txt2)
     txt2.innerHTML += `${to_doing.value}`
@@ -79,7 +79,7 @@ function InserirDados3(){
     var txt3 = document.createElement("li")
     let imagem = document.createElement("img")
     imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "/image/delete.png")
+    imagem.setAttribute("src", "image/delete.png")
     txt3.innerHTML = " "
     third.appendChild(txt3)
     txt3.innerHTML += `${to_finished.value}`
