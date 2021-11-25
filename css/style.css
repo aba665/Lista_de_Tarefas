@@ -11,14 +11,14 @@
 }
 body{
     width: 100%;
-    height: 800px;
+    height: 580px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: url(../image/paico.jpg);
-    background-repeat: no-repeat;
-    background-repeat: repeat-y;
-    background-size: cover;
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 74%); 
+
 }
 h1{
+    color: #000000bb;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -47,6 +47,11 @@ h2{
     box-shadow: 3px 2px 4px #33495e;
     transition: 0.8s ease-in;
 }
+.encima:hover{
+    height: 38vw;   
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    
+}
 #meio{
     color: white;
     text-align: center;
@@ -57,6 +62,11 @@ h2{
     box-shadow: 2px 2px 4px black;
     transition: 1.5s ease-in;
 }
+#meio:hover{
+    height: 38vw; 
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+}
 .quests{
     width: 90%;
     height: 75%;
@@ -64,7 +74,7 @@ h2{
     border: 4px double black;
 }
 input{
-    font-size: 25px;
+    font-size: 22px;
     width: 60%;
     margin: 5px 0;
     padding: 6px;
@@ -81,6 +91,7 @@ img{
 
 }
 footer{
+    color: #000000bb;
     text-align: center;
     position: relative;
     top: 10%;
@@ -96,18 +107,29 @@ footer{
 ul li{
     width: 95%;
     font-family: cursive;
-    font-size: 25px;
+    font-size: 22px;
     margin: 2px auto;
     border: 2px solid black;
     border-radius: 4px;
     padding: 5px;
     list-style: none;
 }
-@media(min-width: 320px) and (max-width: 750px){
+#linker{
+    position: fixed;
+    top: 2px;
+    right: 6px;
+}
+#sizeicon{
+    width: 50px;
+}
+@media(min-width: 319px) and (max-width: 750px){
    body{
        width: 100%;
        height: 100%;
        margin: auto;
+   }
+   ul li{
+       font-size: 20px;
    }
     #container{
         position: relative;
@@ -116,6 +138,7 @@ ul li{
         justify-content: center;
         align-items: center;
         height: 1500px;
+    
 
     }
     .encima{
@@ -123,7 +146,7 @@ ul li{
         background-color: #ffffffbb;
         text-align: center;
         width: 90%;
-        height: 90vw;
+        height: 150vw;
         border: 3px solid black;
         box-shadow: 3px 2px 4px #33495e;
         transition: 0.8s ease-in;
@@ -134,14 +157,14 @@ ul li{
         text-align: center;
         background-color: #33495ebb;
         width: 90%;
-        height: 90vw;
+        height: 120vw;
         border: 3px solid black;
         box-shadow: 2px 2px 4px black;
         transition: 1.5s ease-in;
     }
     .quests{
         width: 78%;
-        height: 75%;
+        height: 70%;
         margin: auto;
         border: 2px double black;
         
@@ -150,8 +173,59 @@ ul li{
         font-size: 18px;
         width: 50%;
         margin: 4px 0;
-        padding: 2px;
+        padding: 5px;
         text-align: center;
         background-color: #6088c4fb;
     }
 } 
+@media(min-width: 751px) and (max-width: 980px){
+    body{
+        width: 100%;
+       
+        
+    }
+    ul li{
+        font-size: 17px;
+    }
+    #container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .encima{
+        color: black;
+        background-color: #ffffffbb;
+        text-align: center;
+        width: 28%;
+        height: 40vw;
+        border: 3px solid black;
+        box-shadow: 3px 2px 4px #33495e;
+        transition: 0.8s ease-in;
+    }
+    #meio{
+        color: white;
+        text-align: center;
+        background-color: #33495ebb;
+        width: 28%;
+        height: 40vw;
+        border: 3px solid black;
+        box-shadow: 2px 2px 4px black;
+        transition: 1.5s ease-in;
+    }
+    .quests{
+        width: 90%;
+        height: 70%;
+        margin: auto;
+        border: 4px double black;
+    }
+    input{
+        font-size: 17px;
+        width: 40%;
+        margin: 5px 0;
+        padding: 6px;
+        text-align: center;
+        background-color: #6088c4fb;
+    }
+
+}

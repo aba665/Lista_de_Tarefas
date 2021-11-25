@@ -13,7 +13,10 @@
         <h1>Lista de Tarefas</h1>
     </header>
     <div id="container">
-        <div class="encima" onmouseover="Aumentar()">
+        <div id="linker">
+           <a href="https://github.com/aba665/" target="blank"><img id="sizeicon" src="image/github.png" alt=""></a>
+        </div>
+        <div class="encima" id="up1">
 
             <h2>Fazer</h2>
             <input type="text" name="Fazer" id="fazer">
@@ -22,16 +25,16 @@
             <ul class="quests" id="first"></ul>
 
         </div>
-        <div id="meio" onmouseover="Aumentar()">
+        <div id="meio">
 
             <h2>Fazendo</h2>
-            <input type="text" name="Fazendo" id="fazendo" onclick="Aumentar()">
+            <input type="text" name="Fazendo" id="fazendo" >
             <a href="#"  onclick="InserirDados2()"><img src="image/insert.png" alt="inserir"></a>
             <a href="#" onclick="DeleteBlocoSecond()"><img src="image/empty.png" alt="lixeira"></a>
             <ul class="quests" id="second"></ul>
 
         </div>
-        <div class="encima" onmouseover="Aumentar()">
+        <div class="encima" id="up2">
 
             <h2>Feito</h2>
             <input type="text" name="Feito" id="feito" >

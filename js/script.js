@@ -1,20 +1,37 @@
 var small = document.querySelectorAll("div.encima")
+var up1 = document.getElementById("up1")
+var up2 = document.getElementById("up2")
 var big = document.getElementById("meio")
 var to_do = document.getElementById("fazer")
 var to_doing = document.getElementById("fazendo")
 var to_finished = document.getElementById("feito")
 var arr = []
 
+window.addEventListener('resize', function(){
+
+    if (window.innerWidth < 750) {
+        big.style.height = `90vw`
+        up1.style.height = `90vw`
+        up2.style.height = `90vw`
+    } else {
+        big.style.height = `40vw`
+            for(let i = 0; i < 2; i++){
+                        small[i].style.height = `40vw` 
+                    }
+    }
+
+})
 // Aumenta o tamanho dos blocos de tarefas, poderia ser feito com css tb.
 
-function Aumentar(){
+// function Aumentar(){
+   
+//     big.style.height = `40vw`
+//     for(let i = 0; i < 2; i++){
+//                 small[i].style.height = `40vw` 
+//             }
     
-    big.style.height = `40vw`
-    for(let i = 0; i < 2; i++){
-                small[i].style.height = `40vw` 
-            }
 
-}
+// }
 
 // Criar o item da tarefa no primeiro bloco. 
 
