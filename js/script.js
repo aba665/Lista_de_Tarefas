@@ -19,18 +19,28 @@ function Aumentar(){
 // Criar o item da tarefa no primeiro bloco. 
 
 function InserirDados(){
-   
+    arr.push(to_do.value);
+    localStorage.setItem("arrays", JSON.stringify(arr));
+    if(localStorage.getItem("arrays")){
+        arr = JSON.parse(localStorage.getItem("arrays"))
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+    
+    for(let i = 0; i < arr.length; i++){
     var txt = document.createElement("li")
     let imagem = document.createElement("img")
     imagem.setAttribute("id", "imginside")
     imagem.setAttribute("src", "image/delete.png")
     first.appendChild(txt)
     txt.innerHTML += `${to_do.value}`
-    arr.push(txt)
     txt.style.background = `#6088c4fb`
     to_do.value= ""
     to_do.focus()
     txt.appendChild(imagem)
+    }
+
+    })
 
 //Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
 
