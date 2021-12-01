@@ -21,13 +21,10 @@ function Aumentar(){
 function InserirDados(){
     arr.push(to_do.value);
     localStorage.setItem("arrays", JSON.stringify(arr));
-    if(localStorage.getItem("arrays")){
-        arr = JSON.parse(localStorage.getItem("arrays"))
-    }
-
-    document.addEventListener("DOMContentLoaded", function(){
+   
     
-    for(let i = 0; i < arr.length; i++){
+    
+   
     var txt = document.createElement("li")
     let imagem = document.createElement("img")
     imagem.setAttribute("id", "imginside")
@@ -35,14 +32,23 @@ function InserirDados(){
     first.appendChild(txt)
     txt.innerHTML += `${to_do.value}`
     txt.style.background = `#6088c4fb`
-    to_do.value= ""
     to_do.focus()
     txt.appendChild(imagem)
+
+    if(document.onload){
+        for(let i = 0; i < arr.length; i++){
+            localStorage.getItem("arrays")
+            var txt = document.createElement("li")
+            let imagem = document.createElement("img")
+            imagem.setAttribute("id", "imginside")
+            imagem.setAttribute("src", "image/delete.png")
+            first.appendChild(txt)
+            txt.innerHTML += `${arr[i]}`
+            txt.style.background = `#6088c4fb`
+            to_do.focus()
+            txt.appendChild(imagem)
+        }
     }
-
-    })
-
-//Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
 
     const close = document.querySelectorAll('#imginside')
     for(let i = 0; i <  close.length; i++){
@@ -50,6 +56,14 @@ function InserirDados(){
             close[i].parentElement.remove()
         })
 }   
+
+    
+
+    
+
+//Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
+
+   
 }
 
 // Criar o item da tarefa no segundo bloco.
