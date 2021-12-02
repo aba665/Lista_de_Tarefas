@@ -26,19 +26,7 @@ window.addEventListener('resize', function(){
     }
 
 })
-// Aumenta o tamanho dos blocos de tarefas, poderia ser feito com css tb.
 
-// function Aumentar(){
-   
-//     big.style.height = `40vw`
-//     for(let i = 0; i < 2; i++){
-//                 small[i].style.height = `40vw` 
-//             }
-    
-
-// }
-
-//Função para criar  e percorrer os items da tarefa criados no primeiro bloco 
 
 function mostrarTarefas(){
     first.innerHTML = ''
