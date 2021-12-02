@@ -8,9 +8,11 @@ var to_finished = document.getElementById("feito")
 
 //Pega os itens armazenados
 
-  const tarefas = JSON.parse(localStorage.getItem('list_tarefas'))
-  const tarefas2 = JSON.parse(localStorage.getItem('list'))
-  const tarefas3 = JSON.parse(localStorage.getItem('list3'))
+  const tarefas = JSON.parse(localStorage.getItem('list1')) || []
+  const tarefas2 = JSON.parse(localStorage.getItem('list2')) || []
+  const tarefas3 = JSON.parse(localStorage.getItem('list3')) || []
+
+//Aqui é uma questão de animação e responsividade
 
 window.addEventListener('resize', function(){
 
@@ -58,7 +60,7 @@ mostrarTarefas3()
 // Criar o item da tarefa no primeiro bloco. 
 
 function InserirDados(){
-    const tarefa = to_do.value
+    var tarefa = to_do.value
 
     tarefas.push(tarefa)
 
@@ -166,8 +168,8 @@ function removeTarefa3(pos3){
 //Armazenar os dados de cada bloco
 
 function saveLocal(){
-    localStorage.setItem('list_tarefas', JSON.stringify(tarefas))
-    localStorage.setItem('list', JSON.stringify(tarefas2))
+    localStorage.setItem('list1', JSON.stringify(tarefas))
+    localStorage.setItem('list2', JSON.stringify(tarefas2))
     localStorage.setItem('list3', JSON.stringify(tarefas3))
 }
 
