@@ -5,7 +5,12 @@ var big = document.getElementById("meio")
 var to_do = document.getElementById("fazer")
 var to_doing = document.getElementById("fazendo")
 var to_finished = document.getElementById("feito")
-var arr = []
+
+//Pega os itens armazenados
+
+  const tarefas = JSON.parse(localStorage.getItem('list_tarefas'))
+  const tarefas2 = JSON.parse(localStorage.getItem('list'))
+  const tarefas3 = JSON.parse(localStorage.getItem('list3'))
 
 window.addEventListener('resize', function(){
 
@@ -33,113 +38,148 @@ window.addEventListener('resize', function(){
 
 // }
 
+//Função para criar  e percorrer os items da tarefa criados no primeiro bloco 
+
+function mostrarTarefas(){
+    first.innerHTML = ''
+
+    for(item of tarefas){
+        var txt = document.createElement("li")
+        var itemText = document.createTextNode(item)
+        let imagem = document.createElement("img")
+        imagem.setAttribute("id", "imginside")
+        imagem.setAttribute("src", "image/delete.png")
+        to_do.value = ''
+        txt.style.background = `#6088c4fb`
+        to_do.focus()
+        txt.appendChild(itemText)
+        txt.appendChild(imagem)
+        first.appendChild(txt)
+
+        const pos = tarefas.indexOf(item)
+        imagem.setAttribute("onclick", `removeTarefa(${pos})`)
+        }
+}
+
+//Mostrar os dados salvos ao carregar a página
+
+mostrarTarefas()
+mostrarTarefas2()
+mostrarTarefas3()
+
 // Criar o item da tarefa no primeiro bloco. 
 
 function InserirDados(){
+    const tarefa = to_do.value
+
+    tarefas.push(tarefa)
+
    
-    var txt = document.createElement("li")
-    let imagem = document.createElement("img")
-    imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "image/delete.png")
-    first.appendChild(txt)
-    txt.innerHTML += `${to_do.value}`
-    arr.push(txt)
-    txt.style.background = `#6088c4fb`
-    to_do.value= ""
-    to_do.focus()
-    txt.appendChild(imagem)
-
-//Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
-
-    const close = document.querySelectorAll('#imginside')
-    for(let i = 0; i <  close.length; i++){
-        close[i].addEventListener('click', () =>{
-            close[i].parentElement.remove()
-        })
-}   
+    mostrarTarefas()
+    saveLocal()
 }
+
+//Função para criar  e percorrer os items da tarefa criados no segundo bloco 
+
+function mostrarTarefas2(){
+    second.innerHTML = ''
+
+    for(item2 of tarefas2){
+        var txt2 = document.createElement("li")
+        var itemText2 = document.createTextNode(item2)
+        let imagem2 = document.createElement("img")
+        imagem2.setAttribute("id", "imginside")
+        imagem2.setAttribute("src", "image/delete.png")
+        to_doing.value = ''
+        txt2.style.background = `#6088c4fb`
+        to_doing.focus()
+        txt2.appendChild(itemText2)
+        txt2.appendChild(imagem2)
+        second.appendChild(txt2)
+
+        const pos2 = tarefas2.indexOf(item2)
+        imagem2.setAttribute("onclick", `removeTarefa2(${pos2})`)
+        }
+} 
+
 
 // Criar o item da tarefa no segundo bloco.
 
 function InserirDados2(){
+    const tarefa2 = to_doing.value
 
-    var txt2 = document.createElement("li")
-    let imagem = document.createElement("img")
-    imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "image/delete.png")
-    txt2.innerHTML = " "
-    second.appendChild(txt2)
-    txt2.innerHTML += `${to_doing.value}`
-    txt2.style.background = `#6088c4fb`
-    to_doing.value= ""
-    txt2.style.textShadow = `2px 1px 2px black`
-    to_doing.focus()
-    txt2.appendChild(imagem)
+    tarefas2.push(tarefa2)
 
-    //Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
-
-    const close = document.querySelectorAll('#imginside')
-    for(let i = 0; i <  close.length; i++){
-
-        close[i].addEventListener('click', () =>{
-
-            close[i].parentElement.remove()
-
-        })
-    }
+   
+    mostrarTarefas2()
+    saveLocal()
 }
 
-//Criar o item da tarefa no terceiro bloco.
+//Função para criar  e percorrer os items da tarefa criados no terceiro bloco 
+
+function mostrarTarefas3(){
+    third.innerHTML = ''
+
+    for(item3 of tarefas3){
+        var txt3 = document.createElement("li")
+        var itemText3 = document.createTextNode(item3)
+        let imagem3 = document.createElement("img")
+        imagem3.setAttribute("id", "imginside")
+        imagem3.setAttribute("src", "image/delete.png")
+        to_finished.value = ''
+        txt3.style.background = `#6088c4fb`
+        to_finished.focus()
+        txt3.appendChild(itemText3)
+        txt3.appendChild(imagem3)
+        third.appendChild(txt3)
+
+        const pos3 = tarefas3.indexOf(item3)
+        imagem3.setAttribute("onclick", `removeTarefa3(${pos3})`)
+        }
+} 
+
+// Criar o item da tarefa no terceiro bloco. 
 
 function InserirDados3(){
 
-    var txt3 = document.createElement("li")
-    let imagem = document.createElement("img")
-    imagem.setAttribute("id", "imginside")
-    imagem.setAttribute("src", "image/delete.png")
-    txt3.innerHTML = " "
-    third.appendChild(txt3)
-    txt3.innerHTML += `${to_finished.value}`
-    txt3.style.background = `#6088c4fb`
-    to_finished.value= ""
-    to_finished.focus()
-    txt3.appendChild(imagem)
+    const tarefa3 = to_finished.value
 
-    //Aqui eu percorro todos os itens e removo ao escolher 1. busca o indice do item para a remoção.
+    tarefas3.push(tarefa3)
 
-    const close = document.querySelectorAll('#imginside')
-    for(let i = 0; i <  close.length; i++){
-        close[i].addEventListener('click', () =>{
-
-            close[i].parentElement.remove()
-
-        })
-    }
+   
+    mostrarTarefas3()
+    saveLocal()
 }
 
-//Aqui dou um valor vazio para o primeiro bloco no delete 
+//remove a tarefa(s) do primeiro bloco e do localstorage também
 
-function DeleteBlocoFirst(){
+function removeTarefa(pos){
+    tarefas.splice(pos, 1)
+    mostrarTarefas()
+    saveLocal()
+} 
 
-    let blocoFirst = document.getElementById('first')
-    blocoFirst.innerHTML = ""
+//remove a tarefa(s) do segundo bloco e do localstorage também
 
+function removeTarefa2(pos2){
+    tarefas2.splice(pos2, 1)
+    mostrarTarefas2()
+    saveLocal()
+} 
+
+//remove a tarefa(s) do terceiro bloco e do localstorage também
+
+function removeTarefa3(pos3){
+    tarefas3.splice(pos3, 1)
+    mostrarTarefas3()
+    saveLocal()
+} 
+
+//Armazenar os dados de cada bloco
+
+function saveLocal(){
+    localStorage.setItem('list_tarefas', JSON.stringify(tarefas))
+    localStorage.setItem('list', JSON.stringify(tarefas2))
+    localStorage.setItem('list3', JSON.stringify(tarefas3))
 }
 
-//Aqui dou um valor vazio para o segundo bloco no delete 
-
-function DeleteBlocoSecond(){
-
-     let blocoSecond = document.getElementById('second')
-     blocoSecond.innerHTML = ""
-
-}
-
-//Aqui dou um valor vazio para o terceiro bloco no delete 
-
-function DeleteBlocoThird(){
-
-    let blocoThird = document.getElementById('third')
-    blocoThird.innerHTML = ""
-
-}
